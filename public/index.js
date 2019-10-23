@@ -29,6 +29,8 @@ const data = [
 
 const app = new PIXI.Application({
   transparent: true,
+  width: MAP_SIZE * FIELD_SIZE_PX * 2,
+  height: MAP_SIZE * FIELD_SIZE_PX * 2,
 });
 
 document.body.appendChild(app.view);
@@ -125,7 +127,13 @@ function getMap(size, startX, startY) {
       fields.set(key, { x, y })
 
       graphics.lineStyle(2, 0xFFFFFF, 1);
-      graphics.beginFill(0x2F4D6A);
+
+      let color = 0x2F4D6A;
+      if (column < MAP_SIZE / 3 || row > 1 && column < MAP_SIZE * 0.75 - 1) {
+        color = 0x5C83A2;
+      }
+
+      graphics.beginFill(color);
       graphics.drawRect(x, y, FIELD_SIZE_PX, FIELD_SIZE_PX);
       graphics.endFill();
     }
