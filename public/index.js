@@ -2,7 +2,6 @@ const MAP_SIZE = 6;
 const FIELD_SIZE_PX = 60;
 const PLAYER_STEP_PX = 1;
 const PLAYER_SIZE_PX = 40;
-// const CIRCLE_SIZE_PX = 15
 
 const data = [
   {
@@ -100,16 +99,6 @@ function getPlayer(map, startRow, startColumn) {
   ghost.anchor.set(0.5);
 
   return ghost;
-
-  // const graphics = new PIXI.Graphics();
-  // const position = getFieldXY(map, startRow, startColumn);
-
-  // graphics.lineStyle(2, 0xFFFFFF, 2);
-  // graphics.beginFill(0xDE3249, 1);
-  // graphics.drawCircle(position.x, position.y, CIRCLE_SIZE_PX);
-  // graphics.endFill();
-
-  // return graphics;
 }
 
 function getMap(size, startX, startY) {
